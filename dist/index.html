@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./images/favicon.ico" />
+    <link rel="stylesheet" href="stylesheet.css" />
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" data-auto-a11y="true"></script>
+    <script src="main.js" defer></script>
+    <title>Bloco de Notas</title>
+  </head>
+
+  <body>
+    <div id="menu">
+      <div class="hamburger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+      <div class="search-box">
+        <table>
+          <tr>
+            <td>
+              <input type="text" placeholder="Pesquisar por Notas" name="searchBar" id="searchBar" />
+            </td>
+            <td>
+              <a class="search-icon"><i class="fas fa-search"></i></a>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <section id="main">
+      <div id="sidebar">
+        <h2>Todas as Notas</h2>
+        <div class="task-list">
+          <h3><i class="far fa-folder-open"></i>Minhas Notas</h3>
+          <ul data-lists></ul>
+          <form data-new-list-form>
+            <input type="text" class="new-list" data-new-list-input placeholder="Adicionar nova Nota"
+              aria-label="Add a new list" />
+            <i class="fas fa-arrow-up" id="up-arrow"></i>
+          </form>
+          <button class="delete-btn" id="delete-btn" data-delete-list-button>
+            Excluir<i class="far fa-trash-alt"></i>
+          </button>
+        </div>
+      </div>
+
+      <div id="todos" data-list-display-container>
+        <div class="todo-lister">
+          <div class="todo-header">
+            <h2 data-list-title></h2>
+            <p data-list-count><span></span></p>
+          </div>
+          <div class="todo-list" data-tasks></div>
+          <div class="below-todo">
+            <div class="btns">
+              <button class="add-btn">
+                <i class="fas fa-plus"></i>
+              </button>
+              <button class="clear-btn" id="clear-btn" data-clear-complete-tasks-button>
+                Limpar Tudo<i class="far fa-times-circle"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="modal">
+      <div class="container">
+        <h2>Criar Nova</h2>
+        <div class="close">+</div>
+        <form data-new-task-form>
+          <label for="name">Titúlo da Nota</label><br />
+          <input type="text" id="name" data-new-task-input placeholder="Titúlo" ariel-label="Add new task item"
+            autocomplete="off" required /><br />
+          <label for="due-date">Data de Criaçãp</label>
+          <input type="date" id="due-date" name="due-date" /><br />
+          <label for="priority">Brioridade:</label><br />
+          <select name="priority" id="priority">
+            <option value="Low">Baixa</option>
+            <option value="Medium">Média</option>
+            <option value="High">Urgente</option>
+          </select><br />
+          <label for="description">Descrição:</label><br />
+          <textarea name="description" id="description" cols="30" rows="6"></textarea><br />
+          <input type="submit" />
+        </form>
+      </div>
+    </div>
+
+    <div id="overlay"></div>
+
+    <template id="task-template">
+      <div class="todo">
+        <div class="todo-content">
+          <div class="task">
+            <input type="checkbox" />
+            <label><span class="checkbox"></span></label>
+          </div>
+        </div>
+      </div>
+    </template>
+  </body>
+
+</html>
